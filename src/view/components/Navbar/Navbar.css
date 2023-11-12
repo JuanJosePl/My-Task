@@ -1,0 +1,94 @@
+/* Estilos para la barra de navegación */
+/* ------------------------------------ */
+/* Block: navbar */
+.navbar {
+    display: flex; 
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 20px;
+    background-color: #f5f5f5;
+    color: #333;
+    box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+  }
+  
+  .navbar__links {
+    display: flex;
+    align-items: center;
+  }
+  
+  .navbar__app-icon {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+  }
+  
+  .navbar__app-name {
+    font-size: 21px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #363434;
+    margin-right: 52rem;
+    min-width: 120px;
+  }
+  
+  .navbar__links--right {
+    display: flex; 
+    align-items: center;
+  }
+  
+  .navbar__link {
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+    margin-right: 20px;
+    transition: color 0.3s ease;
+    display: inline;
+  }
+  
+  .navbar__link:last-child {
+    margin-right: 0;
+  }
+  
+  .navbar__link:hover {
+    color: #0077B6;
+  }
+  
+  /* navbar themes */
+  #light .navbar{
+    display: flex; 
+    justify-content: space between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 20px;
+    background-color: #f5f5f5;
+    color: #333;
+    box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+  }
+  
+  #dark.navbar{
+    display: flex; 
+    justify-content: space between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 20px;
+    background-color: #0c0b0b;
+    color: #fafafa;
+    box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+  }
+  
+  .switch{
+    margin-left: 1rem;
+  }

@@ -1,0 +1,80 @@
+/* Table styles */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px auto;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+  }
+  
+  th, td {
+    padding: 15px 20px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+  }
+  
+  th {
+    background-color: #f2f2f2;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-top: 1px solid #ddd;
+  }
+  
+  td {
+    font-size: 14px;
+  }
+  
+  /* Column styles */
+  
+  .title-column {
+    width: 30%;
+  }
+  
+  .description-column {
+    width: 40%;
+  }
+  
+  .date-column {
+    width: 10%;
+  }
+  
+  .status-column {
+    width: 10%;
+  }
+  
+  .actions-column {
+    width: 10%;
+  }
+  
+  /* Status column styles */
+  
+  .status-column .pending {
+    color: #f00;
+  }
+  
+  .status-column .completed {
+    color: #008000;
+  }
+  
+  /* Actions column styles */
+  
+  .actions-column button {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 5px;
+  }
+  
+  .actions-column .edit-button {
+    background-color: #007bff;
+    color: #fff;
+  }
+  
+  .actions-column .delete-button {
+    background-color: #dc3545;
+    color: #fff;
+  }
+  

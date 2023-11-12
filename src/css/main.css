@@ -1,0 +1,19 @@
+/* Estilos generales */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap');
+
+/* Estilos para el cuerpo de la página */
+/* ------------------------------------ */
+/* Block: body */
+body {
+  display: flex;
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+
+
+
+
+
+
