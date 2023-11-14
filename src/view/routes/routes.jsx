@@ -5,6 +5,7 @@ import RegistrationForm from "../pages/Register/RegistrationForm";
 import Home from "../pages/Home/Home";
 import  PageTask  from "../pages/Task/PageTask";
 import { ProtectedRoute } from "./ProtectedRoute";
+import { ErrorPage } from "../pages/ErrorPage/ErrorPage";
 
 
 export const router = createBrowserRouter([
@@ -26,8 +27,9 @@ export const router = createBrowserRouter([
       },
       {
         path: "pagetask",
-        element: <PageTask />,
+        element: <ProtectedRoute> <PageTask /> </ProtectedRoute>,
       },
     ],
+    ErrorBoundary: ErrorPage
   },
 ]);

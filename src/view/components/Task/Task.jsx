@@ -9,16 +9,16 @@ export const Task = ({ task }) => {
   const handleDelete = () => {
     deleteTask(task.id)
       .then((task) => {
-        window.alert('Se eliminó la tarea ' + task.title);
+        window.alert('Se eliminó la tarea ' + task.name);
         dispatch({ type: 'DELETE_TASK', payload: task.id });
       });
   };
 
   return (
     <tr>
-      <td>{task.title}</td>
+      <td>{task.name}</td>
       <td>{task.description}</td>
-      <td>{task.date}</td>
+      <td>{task.finishDate}</td>
       <td>
         <button onClick={() => dispatch({ type: 'SET_CURRENT_TASK', payload: task })}>Editar</button>
         <button onClick={handleDelete}>Eliminar</button>

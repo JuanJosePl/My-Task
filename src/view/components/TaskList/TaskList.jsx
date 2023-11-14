@@ -1,7 +1,7 @@
 import { Task } from '../Task/Task'
 import './TaskList.css'
 
-export const TasksList = ({ tasks }) => {
+export const TasksList = ({ task }) => {
   return (
     <table>
       <thead>
@@ -15,8 +15,8 @@ export const TasksList = ({ tasks }) => {
       </thead>
       <tbody>
         {
-          tasks && tasks.map(task => (
-            <Task key={task.id} task={task} />
+          task && task.map(task => (
+            <Task key={task._id} task={task} />
           ))
         }
       </tbody>

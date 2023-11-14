@@ -3,19 +3,22 @@ import { API_URL } from '../env'
 export const getTodos = () => {
   return fetch(API_URL)
     .then(response => response.json())
-    .then(response => response.products)
+    .then(response => response.todo)
 }
 
 export const create = (body) => {
+  console.log(body)
   return fetch(API_URL, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
     },
     body: JSON.stringify(body)
-  })
+     })
+     
     .then(response => response.json())
-    .then(response => response.task)
+    .then(response => response.todo)
+    
 }
 
 export const update = (body) => {
@@ -27,7 +30,7 @@ export const update = (body) => {
     body: JSON.stringify(body)
   })
     .then(response => response.json())
-    .then(response => response.task)
+    .then(response => response.todo)
 }
 
 export const deleteTask = (taskId) => {
@@ -38,5 +41,5 @@ export const deleteTask = (taskId) => {
     }
   })
     .then(response => response.json())
-    .then(response => response.task)
+    .then(response => response.todo)
 }

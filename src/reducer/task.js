@@ -1,7 +1,7 @@
 export const initialState = {
-    user: null,
     tasks: [],
     currentTask: null,
+    userId: globalThis.localStorage.getItem('userId'),
   };
   
   export const reducer = (state, action) => {
@@ -9,7 +9,7 @@ export const initialState = {
       case 'CREATE_TASK':
         return { ...state, tasks: [...state.tasks, action.payload] };
       case 'UPDATE_TASK': {
-        const index = state.tasks.findIndex(task => task.id === action.payload.id);
+        const index = state.tasks.findIndex(task => task._id === action.payload._id);
         state.tasks[index] = action.payload;
         return { ...state, currentTask: null };
       }
@@ -18,7 +18,7 @@ export const initialState = {
       case 'DELETE_TASK':
         return {
           ...state,
-          tasks: state.tasks.filter(task => task.id !== action.payload),
+          tasks: state.tasks.filter(task => task._id !== action.payload),
         };
       case 'SET_CURRENT_TASK':
         return { ...state, currentTask: action.payload };

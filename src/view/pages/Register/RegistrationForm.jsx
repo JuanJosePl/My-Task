@@ -38,7 +38,7 @@ const RegistroForm = () => {
           window.alert(
             `El usuario ${data.user.firstName} se creó correctamente.`
           );
-          navigate("/pagetask");
+          navigate("/login");
         } else {
           window.alert("Ocurrió un error en el registro. Inténtalo de nuevo.");
         }
