@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import './Navbar.css'
 import { useState } from "react";
 import ReactSwitch from "react-switch";
+import Input from "../input/input";
 
 function NavBar() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);

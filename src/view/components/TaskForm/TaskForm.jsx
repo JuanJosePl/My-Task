@@ -17,32 +17,37 @@ export const TaskForm = () => {
       isCompleted: false,
     };
 
+    // Obtener valores del formulario
     for (const element of event.target.elements) {
       if (element.name) {
         body[element.name] = element.value;
       }
     }
 
-    state.currentTask
-      ? updateTask(body, event.target)
-      : createTask(body, event.target);
+    // Llamar a la función correspondiente basada en si existe una tarea actual
+    state.currentTask ? updateTask(body) : createTask(body);
   };
 
   const createTask = (body) => {
     // Crear la tarea
-    create({ ...body, userId }).then((task) => {
-      window.alert("Se creó la tarea: " + body.name);
-      console.log(body);
-      console.log(task);
-      dispatch({ type: "CREATE_TASK", payload: task });
-    });
+    create(body)
+      .then((task) => {
+        window.alert("Se creó la tarea: " + body.name);
+        console.log("Tarea creada:", task);
+        dispatch({ type: "CREATE_TASK", payload: task });
+      })
+      .catch((error) => {
+        console.error("Error al crear la tarea:", error);
+        window.alert("Hubo un error al crear la tarea. Inténtalo de nuevo.");
+      });
   };
 
   const updateTask = (body) => {
     // Actualizar la tarea
-    update({ ...body, _id: state.currentTask._id, userId })
+    update({ ...body, _id: state.currentTask._id })
       .then((task) => {
-        window.alert("Se actualizó la tarea:" + task.title);
+        window.alert("Se actualizó la tarea: " + body.name);
+        console.log("Tarea actualizada:", task);
         const updatedIndex = state.tasks.findIndex(
           (_task) => _task._id === task._id
         );
@@ -50,13 +55,9 @@ export const TaskForm = () => {
       })
       .catch((error) => {
         console.error("Error al actualizar la tarea:", error);
-        window.alert(
-          "Hubo un error al actualizar la tarea. Inténtalo de nuevo."
-        );
+        window.alert("Hubo un error al actualizar la tarea. Inténtalo de nuevo.");
       });
   };
-
-  console.log(state.tasks);
 
   return (
     <form onSubmit={handleSubmit} className="task-form">
