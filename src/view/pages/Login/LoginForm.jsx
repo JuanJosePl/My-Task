@@ -28,7 +28,10 @@ const LoginForm = () => {
       .then(response => {
         const userId = response.user._id;
         globalThis.localStorage.setItem("userId", userId);
+        const firstName = response.user.firstName;
+        globalThis.localStorage.setItem("firstName", firstName);
         navigate("/pagetask");
+
       })
       .catch(error => {
         console.log(error);

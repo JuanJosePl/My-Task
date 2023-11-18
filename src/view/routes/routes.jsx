@@ -27,7 +27,7 @@ export const router = createBrowserRouter([
       },
       {
         path: "pagetask",
-        element: <PageTask />,
+        element: (<ProtectedRoute> <PageTask /> </ProtectedRoute>) ,
       },
     ],
     ErrorBoundary: ErrorPage

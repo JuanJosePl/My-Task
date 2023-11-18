@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import './Home.css'
 
 function Home() {
+  localStorage.clear()
   return (
     <div className="home">
       <div className="home__main-content" id="inicio">

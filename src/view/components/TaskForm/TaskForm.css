@@ -1,63 +1,111 @@
+.taskFormContainer__title{
+  margin-left: 24rem;
+}
+
+
+
+.taskFormContainer {
+  margin-left: 20rem;
+}
+
+.formContent {
+  margin-top: 1.5rem;
+  display: flex;
+  /* justify-content: flex-end;  */
+  gap: 2rem; /* Espacio entre el formulario y otros elementos */
+}
+
+.icono-name {
+  display: flex;
+  align-items: center;
+  gap: .8rem;
+}
+
+.imgSaludo {
+    width: 50px;
+    /* margin-left: 15rem; */
+}
+
+
 .task-form {
+  width: 300px; 
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; 
+}
+
+.formInput,
+textarea {
+  width: 100%; /* Ocupar todo el ancho del formulario */
+  border: none;
+  border-bottom: 3px solid #ccaff7;
+  background-color: #ffffff;
+  padding: .2rem 0;
+  padding-left: .2rem;
+  outline: none;
+  font-weight: 200;
+  color: black;
+  margin-bottom: 1rem; /* Espacio entre los campos del formulario */
+}
+
+.formInput:focus {
+  border-bottom: 3px solid #fe9e43;
+  transition: 1s ease;
+}
+
+.formInput::placeholder {
+  font-weight: 200;
+  color: black;
+}
+
+.botonCrear {
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 20px;
+  background-color: #fe9e43;
+  color: white;
+  cursor: pointer;
+  outline: none;
+  font-size: 1rem;
+}
+
+.botonCrear:hover {
+  box-shadow: 2px 2px 8px 2px #f7b87d;
+}
+
+/* MEDIA QUERIES */
+
+@media (max-width: 500px) {
+  main {
+    flex-direction: column;
+    margin-top: 0;
+  }
+
+  .taskFormContainer {
+    margin-top: -15rem;
+    margin-bottom: 2rem;
+  }
+  
+  .formContent {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    padding: 20px;
-    border-radius: 10px;
-    background-color: #fff;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    gap: .2rem;
+    margin-top: 1rem;
   }
   
-  .task-form__title {
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 20px;
-  }
-  
-  .task-form__section {
+  .fecha-recordatorio {
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    margin-bottom: 20px;
+    gap: 2rem;
   }
-  
-  .task-form__input {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 10px;
-  }
-  
-  .task-form__input label {
-    font-size: 16px;
-    font-weight: bold;
-    margin-bottom: 5px;
-  }
-  
-  .task-form__input input {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 14px;
-  }
-  
-  .task-form__input textarea {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 14px;
-    resize: none;
-    width: 100%;
-    height: 100px;
-  }
-  
-  .task-form button {
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    background-color: #007bff;
-    color: #fff;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
-  }
-  
+}
+
+/* Class modos */
+
+.input {
+  background-color: #111;
+}
+
+.blackdark {
+  background-color: #111;
+  color: white;
+}

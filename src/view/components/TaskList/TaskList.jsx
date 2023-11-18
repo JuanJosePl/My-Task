@@ -14,11 +14,9 @@ export const TasksList = ({ task }) => {
         </tr>
       </thead>
       <tbody>
-        {
-          task && task.map(task => (
+        {task && task.map(task => {
             <Task key={task._id} task={task} />
-          ))
-        }
+          })}
       </tbody>
     </table>
   )

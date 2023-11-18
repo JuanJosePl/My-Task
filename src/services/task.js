@@ -1,13 +1,15 @@
 // Función para obtener todas las tareas (TODOs)
-export const getTodos = () => {
-  return fetch('https://birsbane-numbat-zjcf.1.us-1.fl0.io/api/todo')
+export const getTodos = (userId) => {
+  
+  return fetch(`https://birsbane-numbat-zjcf.1.us-1.fl0.io/api/todo?userId=${userId}`)
     .then(response => {
       if (!response.ok) {
+        console.log(userId)
         throw new Error('La respuesta de la red no fue exitosa');
       }
       return response.json();
     })
-    .then(response => response.todo)
+    .then(response => response.tasks)
     .catch(error => {
       console.error('Hubo un problema al obtener las tareas:', error);
       throw error;
@@ -15,27 +17,10 @@ export const getTodos = () => {
 }
 
 // Función para crear una tarea (TODO)
-export const create = (body) => {
-  console.log(body);
-  return fetch('https://birsbane-numbat-zjcf.1.us-1.fl0.io/api/todo', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify(body)
-  })
-    .then(response => {
-      if (!response.ok) {
-        throw new Error('La respuesta de la red no fue exitosa');
-      }
-      return response.json();
-    })
-    .then(response => response.todo)
-    .catch(error => {
-      console.error('Hubo un problema al crear la tarea:', error);
-      throw error;
-    });
-}
+// export const create = (body) => {
+//   console.log(body);
+//   return 
+// }
 
 // Función para actualizar una tarea (TODO)
 export const update = (body) => {
@@ -52,7 +37,7 @@ export const update = (body) => {
       }
       return response.json();
     })
-    .then(response => response.todo)
+    .then(response => response.tasks)
     .catch(error => {
       console.error('Hubo un problema al actualizar la tarea:', error);
       throw error;
@@ -73,7 +58,7 @@ export const deleteTask = (taskId) => {
       }
       return response.json();
     })
-    .then(response => response.todo)
+    .then(response => response.tasks)
     .catch(error => {
       console.error('Hubo un problema al eliminar la tarea:', error);
       throw error;
