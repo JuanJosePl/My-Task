@@ -1,37 +1,30 @@
 export const initialState = {
+  user: null,
   tasks: [],
-  currentTask: null,
-  userId: globalThis.localStorage.getItem('userId'),
-};
+  taskToUpdate: null
+}
 
-export const reducer = (state, action) => {
+export function reducer (state, action) {
   switch (action.type) {
-    case 'CREATE_TASK':
-      console.log('Tareas antes de CREATE_TASK:', state.tasks);
-      return { ...state, tasks: [...state.tasks, action.payload] };
+    case 'LOGIN':
+      return { ...state, user: action.payload }
+    case 'LOGOUT':
+      return { ...state, user: null }
+    case 'LOAD_TASKS':
+      return { ...state, tasks: action.payload }
+    case 'ADD_TASKS':
+      return { ...state, tasks: [...state.tasks, action.payload] }
     case 'UPDATE_TASK': {
-      console.log('Tareas antes de UPDATE_TASK:', state.tasks);
-      const updatedTasks = state.tasks.map(task => {
-        if (task._id === action.payload._id) {
-          return action.payload;
-        }
-        return task;
-      });
-      return { ...state, tasks: updatedTasks, currentTask: null };
-    }
-    case 'GET_TASKS':
-      console.log('Tareas antes de GET_TASKS:', state.tasks);
-      return { ...state, tasks: action.payload };
+      const index = state.tasks.findIndex(task => task._id === action.payload._id)
+      state.tasks[index] = action.payload
+      return { ...state, taskToUpdate: null } }
+    case 'SET_UPDATE_TASK':
+      return { ...state, taskToUpdate: action.payload }
     case 'DELETE_TASK':
-      console.log('Tareas antes de DELETE_TASK:', state.tasks);
-      return {
-        ...state,
-        tasks: state.tasks.filter(task => task._id !== action.payload),
-      };
-    case 'SET_CURRENT_TASK':
-      console.log('Tareas antes de SET_CURRENT_TASK:', state.tasks);
-      return { ...state, currentTask: action.payload };
+      return { ...state, tasks: state.tasks.filter(task => task._id !== action.payload) }
+    case 'COMPLETE_TASK':
+      return { ...state, tasks: state.tasks.map(task => task._id === action.payload ? { ...task, isCompleted: false } : task) }
     default:
-      return state;
+      return state
   }
-};
+}

@@ -1,14 +1,20 @@
 import { Link } from "react-router-dom";
-import './Navbar.css'
-import { useState } from "react";
+import "./Navbar.css";
+import { useState, useContext } from "react";
 import ReactSwitch from "react-switch";
-import Input from "../input/input";
+import { TaskContext } from "../../../context/task";
 
 function NavBar() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [theme, setTheme] = useState("dark");
   const toggleTheme = () => {
     setTheme((curr) => (curr === "light" ? "dark" : "light"));
+  };
+  const { state, dispatch } = useContext(TaskContext);
+
+  const Logout = () => {
+    window.alert("¿Estas seguro que quieres cerrar sesión?");
+    dispatch({ type: "LOGOUT" });
   };
 
   return (
@@ -24,14 +30,15 @@ function NavBar() {
         </Link>
       </div>
       <div className="navbar__links navbar__links--right">
-        {isAuthenticated ? (
+        {state.user && (
           <div>
-            <Input className="navbar__input" placeholder="Buscar..." />
-            <Link className="navbar__link" to="/logout">
+            <Link className="navbar__link" to="/" onClick={Logout}>
               Cerrar sesión
             </Link>
           </div>
-        ) : (
+        )}
+
+        {!state.user && (
           <div>
             <Link className="navbar__link" to="/login">
               Iniciar sesión

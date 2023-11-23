@@ -1,111 +1,88 @@
-.taskFormContainer__title{
-  margin-left: 24rem;
-}
-
-
-
-.taskFormContainer {
-  margin-left: 20rem;
-}
-
-.formContent {
-  margin-top: 1.5rem;
+.containerAll_Task {
   display: flex;
-  /* justify-content: flex-end;  */
-  gap: 2rem; /* Espacio entre el formulario y otros elementos */
+  justify-content: flex-end; /* Align the form to the right*/
+  margin-top: 20px;
 }
 
-.icono-name {
+.container__task__form_Task {
+  width: 300px; /* Fixed width of the form */
+  background-color: #f5f5f5;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-right: 50px; /* Add margin to the right of the form */
+}
+
+.container__title__form_Task {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #333;
+}
+
+.iconoName {
   display: flex;
   align-items: center;
-  gap: .8rem;
+  margin-bottom: 20px;
 }
 
 .imgSaludo {
-    width: 50px;
-    /* margin-left: 15rem; */
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
 }
 
+.namePerson {
+  font-size: 18px;
+  color: #444;
+}
 
-.task-form {
-  width: 300px; 
+.list__buttons__form_Task {
+  margin-bottom: 20px;
+}
+
+.list__buttons__div_Task {
   display: flex;
   flex-direction: column;
-  align-items: flex-start; 
 }
 
-.formInput,
-textarea {
-  width: 100%; /* Ocupar todo el ancho del formulario */
+.inputs__form_Task {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.description {
+  height: 100px;
+}
+
+.label__fecha__finalizacion_Task {
+  display: block;
+  margin-bottom: 15px;
+  color: #444;
+}
+
+.inputsform {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.Register_Button_Task {
+  width: 100%;
+  padding: 10px;
   border: none;
-  border-bottom: 3px solid #ccaff7;
-  background-color: #ffffff;
-  padding: .2rem 0;
-  padding-left: .2rem;
-  outline: none;
-  font-weight: 200;
-  color: black;
-  margin-bottom: 1rem; /* Espacio entre los campos del formulario */
-}
-
-.formInput:focus {
-  border-bottom: 3px solid #fe9e43;
-  transition: 1s ease;
-}
-
-.formInput::placeholder {
-  font-weight: 200;
-  color: black;
-}
-
-.botonCrear {
-  padding: 1rem 2rem;
-  border: none;
-  border-radius: 20px;
-  background-color: #fe9e43;
+  border-radius: 5px;
+  background-color: #4caf50;
   color: white;
+  font-size: 16px;
   cursor: pointer;
-  outline: none;
-  font-size: 1rem;
+  transition: background-color 0.3s;
 }
 
-.botonCrear:hover {
-  box-shadow: 2px 2px 8px 2px #f7b87d;
-}
-
-/* MEDIA QUERIES */
-
-@media (max-width: 500px) {
-  main {
-    flex-direction: column;
-    margin-top: 0;
-  }
-
-  .taskFormContainer {
-    margin-top: -15rem;
-    margin-bottom: 2rem;
-  }
-  
-  .formContent {
-    display: flex;
-    flex-direction: column;
-    gap: .2rem;
-    margin-top: 1rem;
-  }
-  
-  .fecha-recordatorio {
-    display: flex;
-    gap: 2rem;
-  }
-}
-
-/* Class modos */
-
-.input {
-  background-color: #111;
-}
-
-.blackdark {
-  background-color: #111;
-  color: white;
+.Register_Button_Task:hover {
+  background-color: #45a049;
 }

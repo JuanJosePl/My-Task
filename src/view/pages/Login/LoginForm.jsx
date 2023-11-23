@@ -1,42 +1,43 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./LoginForm.css";
+import { useContext } from "react";
+import { TaskContext } from "../../../context/task";  
 
 const LoginForm = () => {
+  const { dispatch } = useContext(TaskContext)
   const navigate = useNavigate();
   const handleSubmit = (event) => {
-    event.preventDefault();
-    let body = {};
+    event.preventDefault()
+    let body = {}
     for (const element of event.target.elements) {
       if (element.name) {
-        body = { ...body, [element.name]: element.value };
+        body = { ...body, [element.name]: element.value }
       }
     }
-  
-    if (!globalThis.localStorage) {
-      globalThis.localStorage = {};
-    }
-  
-    fetch("https://birsbane-numbat-zjcf.1.us-1.fl0.io/api/user/auth", {
-      method: "POST",
+    fetch('https://birsbane-numbat-zjcf.1.us-1.fl0.io/api/user/auth', {
+      method: 'POST',
       headers: {
-        "Content-Type": "application/json",
+        'Content-Type': 'application/json'
       },
-      body: JSON.stringify(body),
+      body: JSON.stringify(body)
+    }).then((response) => {
+      if (!response.ok) {
+        throw new Error('Ha ocurrido un error. Verifica las credenciales.')
+      }
+      return response.json()
     })
-      .then(response => response.json())
-      .then(response => {
-        const userId = response.user._id;
-        globalThis.localStorage.setItem("userId", userId);
+      .then((response) => {
+        window.alert('Bienvenido ' + response.user.firstName)
+        dispatch({ type: 'LOGIN', payload: response.user })
         const firstName = response.user.firstName;
         globalThis.localStorage.setItem("firstName", firstName);
-        navigate("/pagetask");
-
+        navigate('/taskform')
       })
-      .catch(error => {
-        console.log(error);
-      });
-  };
+      .catch((error) => {
+        window.alert(error.message)
+      })
+  }
   
 
   return (
@@ -78,3 +79,7 @@ const LoginForm = () => {
 };
 
 export default LoginForm;
+
+
+
+

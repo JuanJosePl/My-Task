@@ -1,11 +1,13 @@
 import { Navigate } from "react-router-dom";
+import { TaskContext } from "../../context/task";
+import { useContext } from "react";
 
 
 export const ProtectedRoute = ({ children }) => {
-  const user = globalThis.localStorage.getItem('userId')
+  const { state } = useContext(TaskContext)
 
-  if (!user) {
-    return <Navigate to='/' replace />;
+  if (!state.user) {
+    return <Navigate to='/login' replace />;
   }
 
   return children;

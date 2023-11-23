@@ -3,7 +3,7 @@ import Layout from "../components/Layout/Layout";
 import LoginForm from "../pages/Login/LoginForm";
 import RegistrationForm from "../pages/Register/RegistrationForm";
 import Home from "../pages/Home/Home";
-import  PageTask  from "../pages/Task/PageTask";
+import  { TaskForm }  from "../components/TaskForm/TaskForm";
 import { ProtectedRoute } from "./ProtectedRoute";
 import { ErrorPage } from "../pages/ErrorPage/ErrorPage";
 
@@ -26,8 +26,8 @@ export const router = createBrowserRouter([
         element: <RegistrationForm />,
       },
       {
-        path: "pagetask",
-        element: (<ProtectedRoute> <PageTask /> </ProtectedRoute>) ,
+        path: "taskform",
+        element: (<ProtectedRoute> <TaskForm /> </ProtectedRoute>) ,
       },
     ],
     ErrorBoundary: ErrorPage

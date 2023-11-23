@@ -1,98 +1,89 @@
+import IconSaludar from '../../../../public/icon/icono-saludo.png'
+import { Tasks } from "../TaskList/tasklist";
 import { useContext } from "react";
-import "./TaskForm.css";
-import { TasksContext } from "../../../context/task";
-import IconSaludar from "/public/icon/icono-saludo.png";
+import { TaskContext } from "../../../context/task";
+import { initialState } from "../../../reducer/task";
+import './TaskForm.css'
 
-export const TaskForm = () => {
-  const { state, dispatch } = useContext(TasksContext);
-  const text = state.currentTask ? "Actualizar" : "Crear";
-
-  const userId = globalThis.localStorage.getItem("userId");
+export function TaskForm() {
   const firstName = globalThis.localStorage.getItem("firstName");
+  const { state, dispatch } = useContext(TaskContext, initialState);
+
+  const text = state.taskToUpdate ? "Actualizar" : "Crear";
 
   const handleSubmit = (event) => {
     event.preventDefault();
-
-    let body = {
-      userId,
-      isCompleted: false,
-    };
-
-    // Obtener valores del formulario
+    let body = { isCompleted: true, userId: state.user._id };
     for (const element of event.target.elements) {
       if (element.name) {
-        body[element.name] = element.value;
+        body = { ...body, [element.name]: element.value };
       }
     }
 
-    fetch("https://birsbane-numbat-zjcf.1.us-1.fl0.io/api/todo", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(body),
-    }).then(response => response.json())
-    .then(response =>{
-      window.alert('Se creo correctamente la tarea ' + response.todo.name)
-      dispatch({ type: 'CREATE_TASK', payload: response.todo })
-    })
-      
+    const update = (body, event) => {
+      fetch("https://birsbane-numbat-zjcf.1.us-1.fl0.io/api/todo", {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+
+        body: JSON.stringify({ ...body, _id: state.taskToUpdate._id }),
+      })
+        .then((response) => response.json())
+        .then((response) => {
+          window.alert(
+            "Se actualizó correctamente la tarea " + response.todo.name
+          );
+          dispatch({ type: "UPDATE_TASK", payload: response.todo });
+          event.target.reset();
+        });
+    };
+
+    const create = (body, event) => {
+      fetch("https://birsbane-numbat-zjcf.1.us-1.fl0.io/api/todo", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+
+        body: JSON.stringify(body, event),
+      })
+        .then((response) => response.json())
+        .then((response) => {
+          event.target.reset();
+          window.alert("Se creó correctamente la tarea " + response.todo.name);
+          dispatch({ type: "ADD_TASKS", payload: response.todo });
+        });
+    };
+    state.taskToUpdate ? update(body, event) : create(body, event);
   };
 
   return (
     <>
-      <form onSubmit={handleSubmit} className="taskFormContainer">
-        <h2 className="taskFormContainer__title">{text} tarea</h2>
-        <div className="formContent">
-          <div className="iconoName">
-            <img src={IconSaludar} className="imgSaludo" alt="" />
-            <p className="namePerson">Hola, {firstName} !</p>
-          </div>
-          <fieldset className="formFields">
-            <div className="formFields__inputGroup">
-              <div className="formFields__input">
-                <label htmlFor="title" className="inputLabel">
-                  Título:
-                </label>
-                <input
-                  id="title"
-                  type="text"
-                  name="name"
-                  className="formInput"
-                  required
-                />
+      <div className='containerAll_Task'>
+        <div className='container__task__form_Task_Task'>
+          <form onSubmit={handleSubmit}>
+            <div className='container__form_Task'>
+              <h2 className='container__title__form_Task'>Crear Tarea</h2>
+              <div className="iconoName">
+                <img src={IconSaludar} className="imgSaludo" alt="" />
+                <p className="namePerson">Hola, {firstName}!</p>
               </div>
-              <div className="formFields__input">
-                <label htmlFor="description" className="inputLabel">
-                  Descripción:
-                </label>
-                <input
-                  id="description"
-                  type="text"
-                  name="description"
-                  className="formInput"
-                  required
-                />
+              <div className='list__buttons__form_Task'>
+                <div className='list__buttons__div_Task'>
+                  <input id='name' name='name' className='inputs__form_Task' type='text' placeholder='nombre a tu tarea' required defaultValue={state.taskToUpdate ? state.taskToUpdate.name : ''} />
+                  <textarea id='description' name='description' className='description inputs__form_Task' rows='10' placeholder='descripción para tu tarea' required defaultValue={state.taskToUpdate ? state.taskToUpdate.description : ''} />
+                  <label className='label__fecha__finalizacion_Task' htmlFor='finishDate'>Fecha de finalizacion
+                    <input id='finishDate' name='finishDate' className='inputsform date' type='date' required defaultValue={state.taskToUpdate ? state.taskToUpdate.finishDate : ''} />
+                  </label>
+                </div>
               </div>
-              <div className="formFields__input fechaRecordatorio">
-                <label htmlFor="finishDate" className="inputLabel">
-                  Fecha:
-                </label>
-                <input
-                  id="finishDate"
-                  type="date"
-                  name="finishDate"
-                  className="formInput"
-                  required
-                />
-              </div>
+              <button type='submit' className='Register_Button_Task'>{text} Tarea</button>
             </div>
-          </fieldset>
-          <button type="submit" className="submitButton">
-            {text}
-          </button>
+          </form>
         </div>
-      </form>
+      </div>
+      <Tasks />
     </>
   );
-};
+}
