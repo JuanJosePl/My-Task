@@ -32,6 +32,8 @@ const LoginForm = () => {
         dispatch({ type: 'LOGIN', payload: response.user })
         const firstName = response.user.firstName;
         globalThis.localStorage.setItem("firstName", firstName);
+        const userId = response.user._id;
+        globalThis.localStorage.setItem("userId", userId);
         navigate('/taskform')
       })
       .catch((error) => {

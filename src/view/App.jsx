@@ -1,12 +1,15 @@
-import { RouterProvider } from 'react-router-dom'
-import { router } from './routes/routes'
-import { TaskProvider } from '../context/task'
+import { RouterProvider } from "react-router-dom";
+import { router } from "./routes/routes";
+import { TaskProvider } from "../context/task";
+import { ThemeContextProvider } from "../context/ThemeContext";
 
- const App = () => {
+const App = () => {
   return (
-    <TaskProvider>
-      <RouterProvider router={router} />
-    </TaskProvider>
-  )
-}
-export default App
+    <ThemeContextProvider>
+      <TaskProvider>
+        <RouterProvider router={router} />
+      </TaskProvider>
+    </ThemeContextProvider>
+  );
+};
+export default App;

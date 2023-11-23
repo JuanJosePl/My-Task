@@ -7,6 +7,7 @@ import './TaskForm.css'
 
 export function TaskForm() {
   const firstName = globalThis.localStorage.getItem("firstName");
+  
   const { state, dispatch } = useContext(TaskContext, initialState);
 
   const text = state.taskToUpdate ? "Actualizar" : "Crear";
