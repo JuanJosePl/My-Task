@@ -1,11 +1,229 @@
-#Dark{
-    background-color: #0c0b0b;
-    color: #fafafa;
-    box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
-  }
+#Dark {
+  background-color: #0c0b0b;
+}
 
-  #Light{
-    background-color: #f5f5f5;
-    color: #333;
-    box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
-  }
+#Dark .layout{
+  background-color: #0c0b0b44;
+}
+
+/*----- Navbar *-----/
+  /* ------------------------------------ */
+/* Inicio DarkMode */
+#Dark .navbar {
+  color: #fafafa;
+}
+
+#Dark .navbar__links {
+  /* Estilos para los enlaces dentro de la barra de navegación en modo oscuro */
+  color: #fafafa;
+}
+
+#Dark .navbar__app-name {
+  /* Estilos para el nombre de la aplicación en modo oscuro */
+  color: #fafafa;
+}
+
+#Dark .navbar__link {
+  /* Estilos para los enlaces de la barra de navegación en modo oscuro */
+  color: #fafafa;
+}
+
+/* Fin del DarkMode */
+
+/* Inicio del Light */
+#Light .navbar {
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+#Light .navbar__links {
+  /* Estilos para los enlaces dentro de la barra de navegación en modo claro */
+  color: #333;
+}
+
+#Light .navbar__app-icon {
+  /* Estilos para el icono de la aplicación en modo claro */
+  filter: brightness(1); /* Ajuste de brillo normal */
+}
+
+#Light .navbar__app-name {
+  /* Estilos para el nombre de la aplicación en modo claro */
+  color: #363434;
+}
+
+#Light .navbar__link {
+  /* Estilos para los enlaces de la barra de navegación en modo claro */
+  color: #333;
+}
+/* Fin del Light */
+/* ----- Fin de la navbar ----- */
+
+/* ----- HomePag ----- */
+
+/* Inicio del DarkMode */
+/* Estilos para modo oscuro */
+
+#Dark .home__main-content{
+  background-color: rgba(69, 55, 55, 0.388)
+}
+#Dark .home {
+  background-color: #0c0b0b; /* Fondo oscuro */
+  color: #fafafa; /* Texto claro */
+  /* Otros estilos específicos para el modo oscuro */
+}
+
+#Dark .home__title {
+  color: #fafafa; /* Color del título */
+}
+
+#Dark .home__description {
+  color: #fafafa; /* Color de la descripción */
+}
+
+#Dark .home__register-button {
+  background-color: #0077b6; /* Color del botón */
+  color: #fafafa; /* Color del texto del botón */
+  /* Otros estilos específicos para el botón en modo oscuro */
+}
+
+/* Otros estilos para las tarjetas de características */
+#Dark .home__feature-card {
+  background-color: #333; /* Fondo de las tarjetas */
+  color: #fafafa; /* Color del texto en las tarjetas */
+}
+
+/* Fin del Darkmode */
+
+/* Inicio Del Light */
+/* Estilos para el modo de luz */
+#Light .home {
+  color: #363434; /* Texto oscuro */
+  /* Otros estilos específicos para el modo de luz */
+}
+
+#Light .home__main-content{
+  background-color: rgb(255, 255, 255)
+}
+
+#Light .home__title {
+  color: #363434; /* Color del título */
+}
+
+#Light .home__description {
+  color: #363434; /* Color de la descripción */
+}
+
+#Light .home__register-button {
+  background-color: #0077B6; /* Color del botón */
+  color: #fafafa; /* Color del texto del botón */
+  /* Otros estilos específicos para el botón en modo de luz */
+}
+
+/* Otros estilos para las tarjetas de características */
+#Light .home__feature-card {
+  background-color: #ffffff; /* Fondo de las tarjetas */
+  color: #363434; /* Color del texto en las tarjetas */
+  /* Otros estilos específicos para las tarjetas en modo de luz */
+}
+/* Fin del Light */
+/* ----- Fin de la HomePag ----- */
+
+/* ----- Footer ----- */
+
+/* ----- Fin del Footer ----- */
+
+/* ----- Login ----- */
+
+#Dark .login-form {
+  background-color: #212121;
+  color: #fff;
+}
+
+#Dark .login-form__header {
+  bottom: 1px solid #333;
+}
+
+#Dark .login-form__title {
+  color: #fff;
+}
+
+#Dark .login-form__subtext {
+  color: #ccc;
+}
+
+#Dark .login-form__input-label {
+  bottom: 1px solid #333;
+}
+
+#Dark .login-form__input {
+  background-color: #333;
+  border: 1px solid #444;
+  color: #fff;
+}
+
+#Dark .login-form__submit-button {
+  background-color: #333;
+  border: 1px solid #444;
+  color: #fff;
+}
+
+#Dark .login-form__registro {
+  color: #ccc;
+}
+
+#Dark .login-form__registro a {
+  color: #fff;
+}
+
+#Light .login-form {
+  background-color: #fff;
+  color: #000;
+}
+
+
+#Light .login-form__title {
+  color: #000;
+}
+
+#Light .login-form__subtext {
+  color: #666;
+}
+
+
+/* ----- Fin del Login ----- */
+
+/* ----- Register ----- */
+#Dark .contenedor {
+  background-color: #212121cb;
+  color: #fff;
+}
+
+#Dark .login-form__titulo {
+  color: #fff;
+}
+
+#Dark .login-form__descripcion {
+  color: #ccc;
+}
+
+#Dark .login-form__input {
+  background-color: #333;
+  border: 1px solid #444;
+  color: #fff;
+}
+
+#Dark .login-form__btn {
+  background-color: #333;
+  border: 1px solid #444;
+  color: #fff;
+}
+
+#Dark .login-form__registro {
+  color: #ccc;
+}
+
+#Dark .login-form__registro a {
+  color: #fff;
+}
+
+/* ----- Fin del register ----- */

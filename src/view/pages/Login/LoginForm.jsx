@@ -3,8 +3,11 @@ import { Link, useNavigate } from "react-router-dom";
 import "./LoginForm.css";
 import { useContext } from "react";
 import { TaskContext } from "../../../context/task";  
+import { useThemeContext } from "../../../context/ThemeContext";
+
 
 const LoginForm = () => {
+  const { contextTheme } = useThemeContext();
   const { dispatch } = useContext(TaskContext)
   const navigate = useNavigate();
   const handleSubmit = (event) => {
@@ -43,7 +46,7 @@ const LoginForm = () => {
   
 
   return (
-    <form onSubmit={handleSubmit} className="login-form">
+    <form onSubmit={handleSubmit} className="login-form" id={contextTheme}>
       <div className="login-form__header">
         <h2 className="login-form__title">Iniciar Sesión</h2>
         <p className="login-form__subtext">

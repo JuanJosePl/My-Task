@@ -1,11 +1,14 @@
 import { Link } from "react-router-dom";
+import { useThemeContext } from "../../../context/ThemeContext";
+import { useState, useContext } from "react";
 import './Home.css'
 
 function Home() {
+  const { contextTheme } = useThemeContext();
   
   return (
     <div className="home">
-      <div className="home__main-content" id="inicio">
+      <div className="home__main-content" id={contextTheme}>
         <div className="home__background-image">
           <h1 className="home__title">
             Tu vida, tus tareas, <br /> un equilibrio perfecto

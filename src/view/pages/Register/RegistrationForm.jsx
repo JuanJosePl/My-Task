@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { useThemeContext } from "../../../context/ThemeContext";
 import "./RegistrationForm.css";
 
 const RegistroForm = () => {
+  const { contextTheme } = useThemeContext();
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -50,7 +52,7 @@ const RegistroForm = () => {
   };
 
   return (
-    <div className="contenedor">
+    <div className="contenedor" id={contextTheme}>
       <div className="login-form__uno">
         <h2 className="login-form__titulo">¡Regístrate para comenzar!</h2>
         <p className="login-form__descripcion">

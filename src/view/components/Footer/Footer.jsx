@@ -1,8 +1,11 @@
 import './Footer.css'
+import { useThemeContext } from "../../../context/ThemeContext";
+
 
 function Footer() {
+  const { contextTheme } = useThemeContext();
   return (
-    <footer className="footer">
+    <footer className="footer" id={contextTheme}>
       <p className="footer__copyright">
         &copy; 2023 My-Task. Todos los derechos reservados.
       </p>

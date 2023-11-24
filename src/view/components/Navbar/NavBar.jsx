@@ -38,7 +38,7 @@ function NavBar() {
         {state.user && (
           <div>
             {state.user && (
-              <Link to="/taskform" className="navbar__app-name">
+              <Link to="/" className="navbar__app-name">
                 My-Task
               </Link>
             )}

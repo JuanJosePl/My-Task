@@ -1,11 +1,14 @@
 import Footer from "../Footer/Footer";
 import NavBar from "../Navbar/NavBar";
 import { Outlet } from "react-router-dom";
+import { useThemeContext } from "../../../context/ThemeContext";
 import './Layout.css'
 
 function Layout() {
+  const { contextTheme } = useThemeContext();
+
   return (
-    <div className="layout">
+    <div className="layout" id={contextTheme}>
       <NavBar />
       <main className="layout__main">
         <Outlet />
