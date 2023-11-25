@@ -5,8 +5,10 @@ import { useState, useContext } from "react";
 import ReactSwitch from "react-switch";
 import { TaskContext } from "../../../context/task";
 import { useThemeContext } from "../../../context/ThemeContext";
+import LogoutModal from "../Modal/LogoutModal";
 
 function NavBar() {
+  const [modalOpen, setModalOpen] = useState(false);
   const { contextTheme, setContextTheme } = useThemeContext();
   const [checked, setChecked] = useState(false);
   const handleSwitch = (nextChecked) => {
@@ -15,10 +17,6 @@ function NavBar() {
   };
 
   const { state, dispatch } = useContext(TaskContext);
-  const Logout = () => {
-    window.alert("¿Estas seguro que quieres cerrar sesión?");
-    dispatch({ type: "LOGOUT" });
-  };
 
   return (
     <nav className="navbar" id={contextTheme}>
@@ -38,11 +36,18 @@ function NavBar() {
         {state.user && (
           <div>
             {state.user && (
-              <Link to="/" className="navbar__app-name">
+              <Link to="/taskform" className="navbar__app-name">
                 My-Task
               </Link>
             )}
-            <Link className="navbar__link" to="/" onClick={Logout}>
+            <Link
+              className="navbar__link"
+              to="/"
+              onClick={(e) => {
+                e.preventDefault();
+                setModalOpen(true);
+              }}
+            >
               Cerrar sesión
             </Link>
           </div>
@@ -75,6 +80,7 @@ function NavBar() {
           className="react-Switch"
           id="material-switch"
         />
+        {modalOpen && <LogoutModal setOpenModal={setModalOpen} />}
       </div>
     </nav>
   );
