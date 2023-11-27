@@ -1,6 +1,7 @@
+/* Center the form */
 .containerAll_Task {
   display: flex;
-  justify-content: flex-end; /* Align the form to the right*/
+  justify-content: center; /* Align the form to the center */
   margin-top: 20px;
 }
 

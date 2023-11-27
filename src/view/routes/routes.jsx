@@ -8,6 +8,7 @@ import { ProtectedRoute } from "./ProtectedRoute";
 import { ErrorPage } from "../pages/ErrorPage/ErrorPage";
 
 
+
 export const router = createBrowserRouter([
   {
     path: "/",

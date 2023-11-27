@@ -116,6 +116,7 @@ const RegistroForm = () => {
           ¿Ya tienes una cuenta? <Link to="/login">Iniciar sesión</Link>
         </p>
       </div>
+     
     </div>
   );
 };

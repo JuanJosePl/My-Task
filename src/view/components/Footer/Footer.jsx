@@ -1,6 +1,6 @@
-import './Footer.css'
+import "./Footer.css";
 import { useThemeContext } from "../../../context/ThemeContext";
-
+import { Link } from "react-router-dom";
 
 function Footer() {
   const { contextTheme } = useThemeContext();
@@ -19,6 +19,9 @@ function Footer() {
         <a href="#" className="footer__social-icon">
           <img src="/instagram.png" alt="Instagram" />
         </a>
+        <Link to="/contact" className="footer__social-icon">
+          contact
+        </Link>
       </div>
     </footer>
   );

@@ -1,60 +1,124 @@
-.task {
-  margin-top: 20px;
+/* Card Container */
+.card {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+  background-color: #f2f2f2;
+  max-width: 100%;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
 }
 
-.ButtonSearch {
-  width: 100%;
-  padding: 10px;
+/* Individual Card */
+.card__task {
+  flex: 0 0 calc(30% - 20px);
   margin-bottom: 20px;
-  font-size: 16px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+}
+
+/* Hover Effect */
+.card__task:hover {
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  transform: scale(1.05);
+}
+
+/* Task Information */
+.card__task-info {
+  margin-bottom: 10px;
+}
+
+/* Task Name */
+.card__task-name {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Task Description */
+.card__task-description {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #333;
+}
+
+/* Task Date */
+.card__task-date {
+  font-size: 12px;
+  color: #999;
+}
+
+/* Search container */
+
+.card__search-container {
+  display: flex;
+  align-items: center;
+  padding: 5px;
   border: 1px solid #ccc;
   border-radius: 5px;
 }
 
-.tableContainer {
-  width: 100%;
-  border-collapse: collapse;
-}
+/* Search input */
 
-.tableHhead {
-  background-color: #f0f0f0;
-  font-weight: bold;
-}
-
-.titlesHead {
-  font-weight: bold;
-}
-
-.tableContainer th,
-.tableContainer td {
-  padding: 10px;
-  text-align: center;
-  border: 1px solid #ccc;
-}
-
-.borderOptios,
-.borderCheck {
+.card__search-input {
+  flex: 1;
+  padding: 8px 10px;
+  border-radius: 5px;
+  outline: none;
+  background-color: #fff;
   border: none;
+  font-size: 16px;
+  color: #333;
 }
 
-.name__Task p {
-  margin: 0;
-}
+/* Search icon */
 
-.table__content.pending {
-  background-color: #ffcccc;
-}
-
-.table__content.completed {
-  background-color: #ccffcc;
-}
-
-.tableContainer button {
-  border: none;
-  background: transparent;
+.card__search-icon {
+  color: #999;
+  width: 24px;
+  height: 24px;
+  padding: 8px;
   cursor: pointer;
 }
 
-.tableContainer button:hover {
-  opacity: 0.7;
+.card__search-input > span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  background-color: #ccc;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.card__search-input > span > i {
+  font-size: 16px;
+  color: #000;
+}
+
+/* Task Actions */
+.card__task-actions {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+/* Action Button */
+.card__action-button {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  color: #f9b234;
+  margin-left: 10px;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Action Button Hover Effect */
+.card__action-button:hover {
+  transform: scale(1.1);
 }

@@ -1,22 +1,15 @@
-import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./LoginForm.css";
-import ModalLogin from "../../components/Modal/ModalLogin"; // Asegúrate de importar la modal
 import { useContext } from "react";
 import { TaskContext } from "../../../context/task";
 import { useThemeContext } from "../../../context/ThemeContext";
 
 const LoginForm = () => {
-  const [showModal, setShowModal] = useState(false);
-  const [firstName, setFirstName] = useState("");
   const navigate = useNavigate();
   const { contextTheme } = useThemeContext();
   const { dispatch } = useContext(TaskContext);
 
-  const handleModalClose = () => {
-    setShowModal(false);
-    navigate("/taskform");
-  };
+  
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -33,25 +26,23 @@ const LoginForm = () => {
       },
       body: JSON.stringify(body),
     })
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error("Ha ocurrido un error. Verifica las credenciales.");
-        }
-        return response.json();
-      })
-      .then((response) => {
-        dispatch({ type: "LOGIN", payload: response.user });
-        const userId = response.user._id;
-        globalThis.localStorage.setItem("userId", userId);
-        const firstName = response.user.firstName;
-        globalThis.localStorage.setItem("firstName", firstName);
-        setFirstName(firstName);
-        setShowModal(true);
-      })
-      .catch((error) => {
-        window.alert(error.message);
-      });
-  };
+     .then((response) => response.json())
+    .then((data) => {
+      if (data.user) {
+        dispatch({ type: "LOGIN", payload: data.user });
+        window.alert(
+          `El usuario ${data.user.firstName} ha iniciado su sesion con exito.`
+        );
+        navigate("/taskform")
+      } else {
+        window.alert("Ocurrió un error en el inicio de sesión. Verifica las credenciales.");
+      }
+    })
+    .catch((error) => {
+      console.error("Error en el inicio de sesión:", error);
+      window.alert("Ocurrió un error en el inicio de sesión. Verifica las credenciales.");
+    });
+};
 
   return (
     <>
@@ -90,9 +81,7 @@ const LoginForm = () => {
         </p>
       
       </form>
-      {showModal && (
-          <ModalLogin firstName={firstName} onClose={handleModalClose} />
-        )}
+      
     </>
   );
 };
