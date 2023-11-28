@@ -28,34 +28,14 @@
   color: #fafafa;
 }
 
+#Dark .navbar__link-cerrar-sesion{
+  color: #fff;
+}
+
 /* Fin del DarkMode */
 
 /* Inicio del Light */
-#Light .navbar {
-  background-color: #f5f5f5;
-  color: #333;
-}
 
-#Light .navbar__links {
-  /* Estilos para los enlaces dentro de la barra de navegación en modo claro */
-  color: #333;
-}
-
-#Light .navbar__app-icon {
-  /* Estilos para el icono de la aplicación en modo claro */
-  filter: brightness(1); /* Ajuste de brillo normal */
-}
-
-#Light .navbar__app-name {
-  /* Estilos para el nombre de la aplicación en modo claro */
-  color: #363434;
-}
-
-#Light .navbar__link {
-  /* Estilos para los enlaces de la barra de navegación en modo claro */
-  color: #333;
-}
-/* Fin del Light */
 /* ----- Fin de la navbar ----- */
 
 /* ----- HomePag ----- */
@@ -64,7 +44,7 @@
 /* Estilos para modo oscuro */
 
 #Dark .home__main-content{
-  background-color: rgba(69, 55, 55, 0.388)
+  background-color: rgb(23 27 51 / 39%);
 }
 #Dark .home {
   background-color: #0c0b0b; /* Fondo oscuro */
@@ -88,9 +68,18 @@
 
 /* Otros estilos para las tarjetas de características */
 #Dark .home__feature-card {
-  background-color: #333; /* Fondo de las tarjetas */
-  color: #fafafa; /* Color del texto en las tarjetas */
+  background-color: rgb(23 27 51 / 39%);
 }
+
+#Dark .home__feature-title{
+  color: #fff;
+}
+
+
+#Dark .home__feature-description{
+  color: #fff; 
+}
+
 
 /* Fin del Darkmode */
 
@@ -129,13 +118,15 @@
 /* ----- Fin de la HomePag ----- */
 
 /* ----- Footer ----- */
-
+#Dark .footer__copyright{
+  color: #fff;
+}
 /* ----- Fin del Footer ----- */
 
 /* ----- Login ----- */
 
 #Dark .login-form {
-  background-color: #212121;
+  background-color:  rgb(23 27 51 / 39%);
   color: #fff;
 }
 
@@ -194,7 +185,7 @@
 
 /* ----- Register ----- */
 #Dark .contenedor {
-  background-color: #212121cb;
+  background-color:  rgb(23 27 51 / 39%);
   color: #fff;
 }
 
@@ -227,3 +218,47 @@
 }
 
 /* ----- Fin del register ----- */
+
+/* ----- Taskform----*/
+#Dark .container__title__form_Task{
+  color: #fff;
+}
+
+#Dark .namePerson{
+  color: #fff;
+}
+
+#Dark .label__fecha__finalizacion_Task {
+  Color: #fff; 
+}
+
+/*----Cerrar sesion*/ 
+
+#Dark .modalContainer{
+  background-color: #111010;;
+}
+
+#Dark .modalContainer .footer{
+  background-color: #111010;
+}
+
+/*----Cards----*/
+#Dark .card{
+  background-color:  rgb(23 27 51 / 39%);
+}
+
+#Dark .card__task{
+  background-color: #111010;
+}
+
+#Dark .card__task-name{
+  color: #fff;
+}
+
+#Dark .card__task-description{
+  color: #fff;
+}
+
+#Dark .card__task-date {
+  color: #fafafa;
+}

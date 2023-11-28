@@ -41,7 +41,7 @@ function NavBar() {
               </Link>
             )}
             <Link
-              className="navbar__link"
+              className="navbar__link-cerrar-sesion"
               to="/"
               onClick={(e) => {
                 e.preventDefault();
