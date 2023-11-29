@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import "./Modal.css";
+import "./modal.css";
 import { TaskContext } from "../../../context/task";
 
 
