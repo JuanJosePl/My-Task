@@ -1,13 +1,11 @@
 import IconSaludar from '../../../../public/icon/icono-saludo.png'
-import { Tasks } from "../TaskList/tasklist";
+import { TasksList } from "../TaskList/tasklist";
 import { useContext } from "react";
 import { TaskContext } from "../../../context/task";
 import { initialState } from "../../../reducer/task";
 import './TaskForm.css'
 
 export function TaskForm() {
-
-  const firstName = globalThis.localStorage.getItem("firstName");
   
   const { state, dispatch } = useContext(TaskContext, initialState);
 
@@ -69,7 +67,7 @@ export function TaskForm() {
               <h2 className='container__title__form_Task'>Crear Tarea</h2>
               <div className="iconoName">
                 <img src={IconSaludar} className="imgSaludo" alt="" />
-                <p className="namePerson">Hola, {firstName}!</p>
+                <p className="namePerson">Hola!</p>
               </div>
               <div className='list__buttons__form_Task'>
                 <div className='list__buttons__div_Task'>
@@ -84,8 +82,9 @@ export function TaskForm() {
             </div>
           </form>
         </div>
+        <TasksList />
       </div>
-      <Tasks />
+      
     </>
   );
 }
