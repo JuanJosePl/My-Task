@@ -10,7 +10,7 @@ import { useContext, useEffect, useState } from "react";
 import { TaskContext } from "../../../context/task";
 import "./TaskList.css";
 
-export const TasksList = () => {
+const TaskList = () => {
   const { state, dispatch } = useContext(TaskContext);
   const [search, setSearch] = useState();
   const seracher = (e) => {
@@ -137,3 +137,5 @@ export const TasksList = () => {
     </>
   );
 };
+
+export default TaskList

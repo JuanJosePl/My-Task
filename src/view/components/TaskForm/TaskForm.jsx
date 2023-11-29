@@ -3,7 +3,8 @@ import { useContext } from "react";
 import { TaskContext } from "../../../context/task";
 import { initialState } from "../../../reducer/task";
 import './TaskForm.css'
-import { TasksList } from '../TaskList/tasklist';
+import TaskList from '../TaskList/TaskList';
+
 
 
 export function TaskForm() {
@@ -83,9 +84,8 @@ export function TaskForm() {
             </div>
           </form>
         </div>
-        <TasksList />
       </div>
-      
+      <TaskList />
     </>
   );
 }
