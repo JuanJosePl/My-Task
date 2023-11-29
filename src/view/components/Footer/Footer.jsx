@@ -19,9 +19,10 @@ function Footer() {
         <a href="#" className="footer__social-icon">
           <img src="/instagram.png" alt="Instagram" />
         </a>
-        <Link to="/contact" className="footer__social-icon">
-          contact
-        </Link>
+        <p className="footer__social-icon footer__copyright">
+          &copy; 2023 My-Task. Diseñado y desarrollado por{" "}
+          <a href="URL_DEL_CREADOR">Juan Jose</a>, <a href="URL_CREADOR">Juan David</a>
+        </p>
       </div>
     </footer>
   );

@@ -262,3 +262,9 @@
 #Dark .card__task-date {
   color: #fafafa;
 }
+
+#Dark .footer a {
+  color: #ffffff;
+  text-decoration: none;
+  margin: 0 5px;
+}

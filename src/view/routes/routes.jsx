@@ -1,4 +1,4 @@
-import { createBrowserRouter } from "react-router-dom";
+import { createHashRouter } from "react-router-dom";
 import Layout from "../components/Layout/Layout";
 import LoginForm from "../pages/Login/LoginForm";
 import RegistrationForm from "../pages/Register/RegistrationForm";
@@ -9,7 +9,7 @@ import { ErrorPage } from "../pages/ErrorPage/ErrorPage";
 
 
 
-export const router = createBrowserRouter([
+export const router = createHashRouter([
   {
     path: "/",
     Component: Layout,
