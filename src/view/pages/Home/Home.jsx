@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
 import { useThemeContext } from "../../../context/ThemeContext";
 import './Home.css'
-import organizacion from '../../../../dist/assets/organizacion.jpg'
+import OrganizacionJpg from '../../../../dist/assets/organizacion.jpg'
 import RecordatorioJpg from '../../../../dist/assets/recordatorio.jpg'
-import accesibilad from '../../../../dist/assets/accesibilad.jpg'
+import AccesibiladJpg from '../../../../dist/assets/accesibilad.jpg'
 
 
 function Home() {
@@ -37,7 +37,7 @@ function Home() {
           </p>
         </div>
         <img
-          src={organizacion}
+          src={OrganizacionJpg}
           alt="Organización"
           className="home__feature-image"
         />
@@ -54,7 +54,7 @@ function Home() {
           </p>
         </div>
         <img
-          src={recordatorio}
+          src={RecordatorioJpg}
           alt="Recordatorios"
           className="home__feature-image"
         />
@@ -71,7 +71,7 @@ function Home() {
           </p>
         </div>
         <img
-          src={accesibilad}
+          src={AccesibiladJpg}
           alt="Accesibilidad"
           className="home__feature-image"
         />
