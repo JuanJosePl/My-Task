@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
 import { useThemeContext } from "../../../context/ThemeContext";
 import './Home.css'
-import OrganizacionJPG from '../../../../dist/assets/organizacion.jpg'
-import RecordatorioJpg from '../../../../dist/assets/recordatorio.jpg'
-import AccesibiladJpg from '../../../../dist/assets/accesibilad.jpg'
+import OrganizacionJPG from '../../../../assets/organizacion.jpg'
+import RecordatorioJpg from '../../../../assets/recordatorio.jpg'
+import AccesibiladJpg from '../../../../assets/accesibilad.jpg'
 
 
 function Home() {
