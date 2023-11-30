@@ -6,7 +6,7 @@ import ReactSwitch from "react-switch";
 import { TaskContext } from "../../../context/task";
 import { useThemeContext } from "../../../context/ThemeContext";
 import LogoutModal from "../Modal/LogoutModal";
-import TaskIcons from '../../../../public/cheque.png'
+import TaskIcons from '../../../../assets/cheque.png'
 
 
 function NavBar() {
