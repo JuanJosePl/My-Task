@@ -1,9 +1,8 @@
 import { Link } from "react-router-dom";
 import { useThemeContext } from "../../../context/ThemeContext";
-import { useState, useContext } from "react";
 import './Home.css'
 import organizacion from '../../../../dist/assets/organizacion.jpg'
-import recordatorio from '../../../../dist/assets/recordatorio.jpg'
+import RecordatorioJpg from '../../../../dist/assets/recordatorio.jpg'
 import accesibilad from '../../../../dist/assets/accesibilad.jpg'
 
 
