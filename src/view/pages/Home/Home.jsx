@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { useThemeContext } from "../../../context/ThemeContext";
 import './Home.css'
-import organizacionjpg from '../../../../dist/assets/organizacion.jpg'
+import OrganizacionJPG from '../../../../dist/assets/organizacion.jpg'
 import RecordatorioJpg from '../../../../dist/assets/recordatorio.jpg'
 import AccesibiladJpg from '../../../../dist/assets/accesibilad.jpg'
 
@@ -37,7 +37,7 @@ function Home() {
           </p>
         </div>
         <img
-          src={organizacionjpg}
+          src={OrganizacionJPG}
           alt="Organización"
           className="home__feature-image"
         />
