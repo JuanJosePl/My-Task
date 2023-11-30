@@ -1,9 +1,9 @@
 import "./Footer.css";
 import { useThemeContext } from "../../../context/ThemeContext";
 import { Link } from "react-router-dom";
-import GorjeoPng from '../../../../dist/assets/gorjeo.png'
-import FacebookPng from '../../../../dist/assets/facebook.png'
-import InstagramPng from '../../../../dist/assets/instagram.png'
+import GorjeoPng from '../../../../assets/gorjeo.png'
+import FacebookPng from '../../../../assets/facebook.png'
+import InstagramPng from '../../../../assets/instagram.png'
 
 
 function Footer() {
