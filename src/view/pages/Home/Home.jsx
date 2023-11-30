@@ -2,6 +2,10 @@ import { Link } from "react-router-dom";
 import { useThemeContext } from "../../../context/ThemeContext";
 import { useState, useContext } from "react";
 import './Home.css'
+import organizacion from '../../../../public/organizacion-unsplash.jpg'
+import recordatorio from '../../../../public/recordatorio-unsplash.jpg'
+import accesibilad from '../../../../public/accesibilad-unsplash.jpg'
+
 
 function Home() {
   const { contextTheme } = useThemeContext();
@@ -34,7 +38,7 @@ function Home() {
           </p>
         </div>
         <img
-          src="../public/organizacion-unsplash.jpg"
+          src={organizacion}
           alt="Organización"
           className="home__feature-image"
         />
@@ -51,7 +55,7 @@ function Home() {
           </p>
         </div>
         <img
-          src="../public/recordatorio-unsplash.jpg"
+          src={recordatorio}
           alt="Recordatorios"
           className="home__feature-image"
         />
@@ -68,7 +72,7 @@ function Home() {
           </p>
         </div>
         <img
-          src="../public/accesibilad-unsplash.jpg"
+          src={accesibilad}
           alt="Accesibilidad"
           className="home__feature-image"
         />
