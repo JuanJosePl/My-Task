@@ -25,7 +25,7 @@ function Footer() {
         </a>
         <p className="footer__social-icon footer__copyright">
           &copy; 2023 My-Task. Diseñado y desarrollado por{" "}
-          <a href="URL_DEL_CREADOR">Juan Jose</a>, <a href="URL_CREADOR">Juan David</a>
+          <a href="URL_DEL_CREADOR">Juan Jose, poloj3614@gmail.com</a>, <a href="URL_CREADOR">Luis David, lperezropain41@gmail.com</a>
         </p>
       </div>
     </footer>
