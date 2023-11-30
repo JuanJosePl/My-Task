@@ -1,4 +1,4 @@
-import IconSaludar from '../../../../public/icon/icono-saludo.png'
+import IconSaludar from '../../../../assets/icon/icono-saludo.png'
 import { useContext } from "react";
 import { TaskContext } from "../../../context/task";
 import { initialState } from "../../../reducer/task";
