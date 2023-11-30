@@ -1,9 +1,9 @@
 import "./Footer.css";
 import { useThemeContext } from "../../../context/ThemeContext";
 import { Link } from "react-router-dom";
-import Gorjeo from '../../../../dist/assets/gorjeo.png'
-import Facebook from '../../../../dist/assets/facebook.png'
-import Instagram from '../../../../dist/assets/instagram.png'
+import GorjeoPng from '../../../../dist/assets/gorjeo.png'
+import FacebookPng from '../../../../dist/assets/facebook.png'
+import InstagramPng from '../../../../dist/assets/instagram.png'
 
 
 function Footer() {
@@ -15,13 +15,13 @@ function Footer() {
       </p>
       <div className="footer__social-icons">
         <a href="#" className="footer__social-icon">
-          <img src={Facebook} alt="Facebook" />
+          <img src={FacebookPng} alt="Facebook" />
         </a>
         <a href="#" className="footer__social-icon">
-          <img src={Gorjeo} alt="Twitter" />
+          <img src={GorjeoPng} alt="Twitter" />
         </a>
         <a href="#" className="footer__social-icon">
-          <img src={Instagram} alt="Instagram" />
+          <img src={InstagramPng} alt="Instagram" />
         </a>
         <p className="footer__social-icon footer__copyright">
           &copy; 2023 My-Task. Diseñado y desarrollado por{" "}
