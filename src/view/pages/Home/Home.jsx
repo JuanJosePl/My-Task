@@ -2,9 +2,9 @@ import { Link } from "react-router-dom";
 import { useThemeContext } from "../../../context/ThemeContext";
 import { useState, useContext } from "react";
 import './Home.css'
-import OrganizacionPng from '../../../../dist/assets/organizacion-unsplash.jpg'
-import RecordatorioPng from '../../../../dist/assets/recordatorio-unsplash.jpg'
-import AccesibiladPng from '../../../../dist/assets/accesibilad-unsplash.jpg'
+import Organizacion from '../../../../dist/assets/organizacion-unsplash.jpg'
+import Recordatorio from '../../../../dist/assets/recordatorio-unsplash.jpg'
+import Accesibilad from '../../../../dist/assets/accesibilad-unsplash.jpg'
 
 
 function Home() {
@@ -38,7 +38,7 @@ function Home() {
           </p>
         </div>
         <img
-          src={OrganizacionPng}
+          src={Organizacion}
           alt="Organización"
           className="home__feature-image"
         />
@@ -55,7 +55,7 @@ function Home() {
           </p>
         </div>
         <img
-          src={RecordatorioPng}
+          src={Recordatorio}
           alt="Recordatorios"
           className="home__feature-image"
         />
@@ -72,7 +72,7 @@ function Home() {
           </p>
         </div>
         <img
-          src={AccesibiladPng}
+          src={Accesibilad}
           alt="Accesibilidad"
           className="home__feature-image"
         />

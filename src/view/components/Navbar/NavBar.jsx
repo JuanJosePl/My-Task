@@ -6,7 +6,7 @@ import ReactSwitch from "react-switch";
 import { TaskContext } from "../../../context/task";
 import { useThemeContext } from "../../../context/ThemeContext";
 import LogoutModal from "../Modal/LogoutModal";
-import taskIcons from '../../../../public/cheque.png'
+import TaskIcons from '../../../../public/cheque.png'
 
 
 function NavBar() {
@@ -24,7 +24,7 @@ function NavBar() {
     <nav className="navbar" id={contextTheme}>
       <div className="navbar__links navbar__links--left ">
         <img
-          src={taskIcons}
+          src={TaskIcons}
           alt="Icono de My-Task"
           className="navbar__app-icon"
         />
